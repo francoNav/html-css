@@ -1,0 +1,412 @@
+:root {
+	--blanco: #ffffff;
+	--azul: ;
+	--secundario: #0097a7;
+	--principal: #ffc107;
+	--grisclaro: #dfe9f3;
+	--grisoscuro: #706b72;
+}
+/*
+ px= es una medida de pantalla, se usa para darle la longitud y el ancho, de la variable
+
+ enm= fue un avance de los px, pero el comportamiento era dificil, si declarabas una variable con enm,
+ la proxima variable seria el doble de la primera.
+
+ rem= es otro avance por la dificultad del enm. se le puede dar la logitud y el ancho del valor de la variable
+  pero es relativo al documento, y la aplicacion en lo que lo mires. utilizando una calculadora de rem, se 
+  puede observar cuanto px tenemo (es un convertido de rem a px).
+  pero se creo un pequeño jack y esto es:  tomar el html y reiniciarlo a 62.5 y luego tomamos el body y
+  y le ponemos 16 px, esto hace que sea sencillo de utilizar los rem, y sacar todo el potencia.ej abajo;
+*/
+
+html{
+	font-size: 62.5%;
+	box-sizing: border-box;}/*esto es un seudocodigo es decir que so puede tomar, y sirve que el padiing no nos pase
+	del la medida que no notros deseamos.
+	ej si ponemos
+	height: 450px;
+    padding: 20px;
+    entonces la iamgen mide 450 px pero con es codigo la imagen se adapta a 450px*/
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+ /*asi seria el jack, esto lo que tenemos que declarar antes de empezar*/
+
+body{
+	font-size: 16px;
+	font-family: 'Krub', sans-serif;
+	background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco)  100% )/*es un fondo degradado que va mas 
+	fuerte abajo y mas debil arriba*/
+}
+h1{
+	font-size: 3.8rem;
+}
+
+h2{
+font-size: 2.8rem; /*tamaño de fuente*/
+}
+
+h3{
+font-size: 2.8rem;/*tamaño de fuente*/
+}
+
+h1{
+	text-align: center; /*texto alineado*/
+
+ 
+}
+
+h1,h2,h3{
+	text-align: center; /*texto alineado*/
+}
+
+h1 span{
+	font-size: 2rem;
+    color: blue ;
+}
+
+.sombra {
+	-webkit-box-shadow: 0px 4px 11px -1px rgba(128,128,128,0.5);
+    -moz-box-shadow: 0px 4px 11px -1px rgba(128,128,128,0.5);
+     box-shadow: 0px 4px 11px -1px rgba(128,128,128,0.5);/*todo esto es hecho en un libreria llamada "CSS matic" donde
+      podes armar tus cuadrado dandole sombre en todos los lados y tambien los colores, despues venis a tu css armas 
+      una clase y le pegas el codigo que te da el programa para arma tu seccion(cuadrado)*/
+
+   background-color: var(--blanco);
+   padding: 2rem;/*padding =relleno*/
+   border-radius: 1rem; /*radio del borde*/
+}
+/*  Composicion de los selectores, puede selecionar uno o multiples.
+selector de elemento: seleciona 1 elemento
+ p {
+ 	color: blue;
+}
+
+selector de clase : se puede crear muchas clases y se inicializa con . ;
+.client {
+	color: blue;
+}
+
+selector ID : se puede tener multiples Id por pagina pero sus nombre no puede 
+repetirse, es decir que no puede repetir ID en el documento es solo ID.
+se incia con #
+ #client{
+	color: blue;
+}
+selector de atributo : seleciona elemento basado en algun atributo que tengan
+[src="logo.jpg"] {
+	color: red;
+	
+}
+
+pero lo selectores se pueden combinar con algo llamado combinacion de descendentes
+tenemos una clase que despues tiene otra clase. es decir que primero busca la 
+clase .client y despues la clase .nombre y le aplica el codigo css
+ej 
+.client .nombre{
+	color: red;
+}
+se puede hacer con clases elemento html,
+ej de hatml
+
+h1 span{
+	color: green;
+}
+
+selecionar todos los hijos se aplica a todos los parafos, ej
+el padre seria .client(y los hijos todos los parrafos)
+los padre e hijos pueden ir cambiando.
+.client > p{
+	color: red;
+}
+*/
+.subtitulo {
+	font-size: 6rem; /*tamaño de la fuente*/
+	text-align: center;/*alineadcion del texto*/
+	font-family: 'Krub', sans-serif;/*familia tipografica*/
+
+
+}
+
+.informacion{
+	color: black;
+}
+
+
+/*espesificidad:  que valores seran tomado por el navegador, no se significa que el ultimo va hacer
+ tomado en cuenta,;
+Es como el navegador va a mostrar el CSS de acuerdo a que tan especifico es el selector que creamos
+cuando son iguales,toma el ultimo valor  ej
+p{
+	color: blue;
+}
+p{
+	color: red;
+}
+para que tenga especificidad seria, el ej va a tomar el primero por que teien mas especifidad
+
+p .parrafo{
+	color: red;
+}
+
+p{
+	color: blue;
+}
+
+auqel sleector que tenga algo mas especifico va mostrar el navegador sin importar la ubicacion.
+*/
+
+
+/*los colores como se pueden usarh de mucha formar.
+exdecimal
+ex
+color: ;
+rgb() 
+hsl()
+*/
+
+.contenedor { /*clase*/
+	max-width: 120rem;/* el ancho, y max signica que el maximo son 1200 px*/
+	margin-top: 0;/*la distancia que hay entre el borde superio de barra y el titulo del diseño*//*margen superior*/
+	margin-right: auto ;/*margen derecho*/
+	margin-bottom: 0;/*margen inferior*/
+	margin-left: auto;/*margen izquierdo*/
+}
+
+/*como se realiza un botoon que diga envia y te envia a otra pagina. se en html con la etiqueta a, pero aquei se le da
+estilo y ubicacion, loq uqe hicimos aqui fue crear boton en general si quiero agregar uno ponlo la clase .boton y ya 
+los atributo de esa clase*/
+.boton {
+	background-color: var(--secundario);/*color de fondo*/
+	color: var(--blanco);/*color de las letras*/
+	padding: 1rem 3rem ; /*10 px de arriba y 30 px de los lados*/
+	margin-top: 1rem; /*separacion con elemnto de arriba 10 px*/
+	text-align: center;/*para que etexto este en medio de la pantalla*/
+	width: 90%;/*cuando cambia el tamaño de la panatalla el boton se vea mas adaptable para apretar*/
+	text-decoration: none;/*para quitar o agrgarle la linea por debajo del texto*/
+	text-transform: uppercase;/*poner el texto en mayuscula*/
+	font-weight: bold;/*poner un texto mas en negrita*/
+	font-size: 2rem; /*taamaño de la letra*/
+	border-radius: .5rem ;/*para que la puntas del cuadrado sean redondeadas*/
+    border: none;
+}
+@media (min-width: 768px){
+	.boton {
+		width: auto;/*ancho*/
+	}
+}
+.boton:hover {
+	cursor: pointer;
+}
+
+.nav-bg {
+ background-color: var(--secundario);/* sinifica que el fondo del navegador va a tenes el color secundario*/
+}
+
+.navegacion-principal{
+
+	display: flex;
+	flex-direction: column;/*los componente de la barra se colocaran uno debajo del otro*//*direccion deflexion*/
+	align-items: ;
+	justify-content: space-between;/*justificar contenido*/
+	
+}
+
+@media (min-width: 760px){/*ancho minimo*/
+	.navegacion-principal{
+		flex-direction: row;
+	}
+}
+/* aca entra en juego los Displey block o Inline : algunos elementos se muestran de una forma y otros de otra
+todos los elementos de html tiene un display por default, vamos a ver que es el displey block
+display block: significa que elemento se va a colocar uno por debajo del otro sin importar su tamaño o contenido
+los <div></div> son un claro ejemplo de esto, pero tambien los parrafos, tambien. el block lo que dice es que si 
+entra lo pone por debajo
+display Inline:  se va a colocar de diferentes formar, ej las etiquetas de navegacion, es decir que todo lo que ;
+se agregue se va a colocar a la derecha, en los <nav></nav> los enlases se colocan al lado.
+*/
+.navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding : 2rem;
+
+}
+.navegacion-principal a:hover{
+	background-color: var(--principal);
+	color: black;
+} 
+
+/* flexbox:  fue creado en un modelo unidireccional, para diseñar tu pagina,tiene dos ejes que puede colocar 
+y distribuir elemento ya sea de arriba hacia abajo, o
+de derecha a izquierda, pero solamente en una direccion.
+row:  viene por default y los colocas de de izquierda a derecha
+los otros valores son: 
+row-reverse: tambien se colocan de ozquierda a derecha.
+
+column y column reverse; si utilizamos column los elementos se vana a colocar de arriba  hacia abajo..
+
+y estas dividen el didseño, pero lo que es mas favorable, por que se pueden utilizar distribuir y ordenar
+mejor los elementos.
+*/
+
+/* difrenetes enfoque para escribir CSS.
+exites diferentes formas de escribir codigos. BEM, Utility Firt o Modulo.
+
+BEM: bloques elementos modificadores;
+primero tenemos una clase
+.card{}
+tomamos una calse y elemto__titulo
+.card__titulo{}
+esta clase tiene una imagen, tomamos la clase e imagen
+.card__imagen{}
+y despues tiene un boton.
+card__boton{}
+y ese boton cambia de color de fondo, entonces tomo la clase y elemento__boton
+.card__boton--activo{} y esto es modificadores.
+
+
+Utility First
+Es tomar uan clase y dentro tener una sola propiedad y valor por clase.
+por ejemplo
+creas una clase cualquiera ej
+.paco{} y la definis
+otra
+.color-red-100{} (el 100 es la intesidad)
+
+modulo:   se dfine lo que esla clase y despues vas selecionando cada uno de los elementos de hatml.;
+ej
+.titulo{}
+.titulo a {} aca selecionas la clase y la etiquetas de enlases.
+
+Importante, se puede selecionar mas de uno en cada uno de estos proyectos dependiendo de los frendwordk.
+
+
+Reponsive designe o adaptar tu pagina, a cel o table o diferentes posistivos.
+el programa que nosotros diseñemos deberan adaptarse a las interecciones del usuario y la resolucion que utilizan
+como logras que tu sitio se adapte.?
+mediante Media Queries
+esto se escribe asi: ;
+@media y despues tiene una condicion (aqui va la condicion){
+	
+
+ esto marca que es siguente codigo se va a ejecutar en esa condicion*/
+
+.hero {
+background-image: url(hero.jpg);
+background-size: cover;/* para cuando la pantalle se se cambie de tamaño se adapte*/
+height: 450px;/*definir una altura*/
+
+position: relative;/* ponemos esta posicion para el hijo(.contenido hero)se pueda posicionar en posicion absoluta*/
+text-align: center;
+margin-bottom: 2rem;
+
+}
+
+/*CSS model box: es una caja, y depende 4 cosas ; 
+tamaño del contenido, tamaño del relleno, tamaño del borde,el margen.
+
+Ahora vamos a ponerle sombra a una imagen;*/
+.contenido-hero{
+	position: absolute;/*esta se puedo usar pro que en el padre(.hero)le puse posicion relativa.*/
+	background-color: rgb(0, 0, 0, .6);/*esto para darle un sobreado a la imagen(se usa rbg 0 0 0 .6)el 
+	ultimo nº es intesidad*/
+	width:100% ;/*el alto del iamgen 100%  quiere decir que ocuapa toda la image independientemente de su alto*/
+	height: 100%;/*el ancho del imagen, 100%  quiere decir que ocuapa toda la image independientemente de su ancho*/
+    
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenido-hero h2,
+.contenido-hero p{
+	color: var(--blanco) ;
+}
+.ubicacion {
+	display: flex;/* por default lo coloca uno al lado del otro*/
+	align-items: baseline;/*alinear verticalmente. flex end es para que pase de arriba hacia abajo al lado del icono*/
+}
+@media (min-width: 768px){
+.servicios {
+	display: grid;
+	grid-template-columns:33.3% 33.3% 33.3% ;
+	column-gap: 10px;
+   }
+}
+.servicio{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+.servicio h3{
+	color: var(--secundario);
+
+}
+.servicio p {
+	text-align: center;
+}
+.servicio .iconos{
+	height: 15rem;
+	width: 15rem;
+	background-color: var(--principal);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.formulario{
+	background-color: var(--grisoscuro);
+	width: min(60rem, 100%);/*compara lo quye es mas pequeño y lo toma ahorras @media*/
+    margin: 0 auto;/*utilizar este margen cuando el padre no es un displey flex, y cuando sea un elemento de tipo block*/
+    padding: 2rem ;
+    border-radius: 0.5;
+}
+.formulario fieldset{
+	border: none;
+
+}
+.formulario legend{
+	text-align: center;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: var(--principal);
+}
+
+.campo{
+	margin-bottom: 1rem;
+
+}
+.campo label{
+	color: var(--blanco);
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	display: block;
+
+}
+.input-text{
+	width: 100%;
+	border: none;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+}
+@media(min-width: 768px){
+.contenedor-campos{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto auto 20rem ;
+	column-gap: 1rem;
+   }
+
+   .campo:nth-child(3),
+   .campo:nth-child(4)
+{
+ 	grid-column: 1 / 3;
+ }
